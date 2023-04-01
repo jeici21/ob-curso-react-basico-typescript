@@ -36,7 +36,7 @@ function App() {
       {/* <OptionalRender /> */}
       {/* Ejemplos de uso de Formik y Yup */}
       {/* <LoginFormik /> */}
-      <RegisterFormik />
+      {/* <RegisterFormik /> */}
       {/* PROYECTO FINAL */}
       {/* <TaskListComponent /> */}
     </div>
