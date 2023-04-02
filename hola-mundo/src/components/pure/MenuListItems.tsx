@@ -6,14 +6,10 @@ interface ListItemProps { text: string, path: string, icon: 'HOME' | 'TASKS' | '
 
 const getIcon = ({ icon }: ListItemProps) => {
     switch (icon) {
-        case 'HOME':
-            return (<Home />)
-        case 'TASKS':
-            return (<Home />)
-        case 'SETTINGS':
-            return (<Settings />)
-        default:
-            return (<Home />)
+        case 'HOME': return (<Home />)
+        case 'TASKS': return (<Home />)
+        case 'SETTINGS': return (<Settings />)
+        default: return (<Home />)
     }
 }
 
