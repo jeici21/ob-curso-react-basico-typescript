@@ -1,10 +1,12 @@
 import './App.css'
+//import AsyncExample from './components/pure/AsyncExample'
+import ObservableExample from './components/pure/ObservableExample'
 //import Father from './components/container/father'
 //import Greeting from './components/pure/Greeting'
 //import GreetingF from './components/pure/GreetingF'
 //import TaskListComponent from './components/container/task_list'
 //import LoginFormik from './components/pure/forms/loginFormik'
-import RegisterFormik from './components/pure/forms/registerFormik'
+//import RegisterFormik from './components/pure/forms/registerFormik'
 //import OptionalRender from './components/pure/optionalRender'
 //import Ejemplo1 from './hooks/Ejemplo1'
 //import Ejemplo2 from './hooks/Ejemplo2'
@@ -37,6 +39,9 @@ function App() {
       {/* Ejemplos de uso de Formik y Yup */}
       {/* <LoginFormik /> */}
       {/* <RegisterFormik /> */}
+      {/* Ejemplos de procesos asíncronos */}
+      {/* <AsyncExample /> */}
+      <ObservableExample />
       {/* PROYECTO FINAL */}
       {/* <TaskListComponent /> */}
     </div>
