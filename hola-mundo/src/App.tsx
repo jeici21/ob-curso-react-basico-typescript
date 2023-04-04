@@ -1,6 +1,7 @@
 import './App.css'
+import FetchExample from './components/pure/FetchExample'
 //import AsyncExample from './components/pure/AsyncExample'
-import ObservableExample from './components/pure/ObservableExample'
+//import ObservableExample from './components/pure/ObservableExample'
 //import Father from './components/container/father'
 //import Greeting from './components/pure/Greeting'
 //import GreetingF from './components/pure/GreetingF'
@@ -41,7 +42,8 @@ function App() {
       {/* <RegisterFormik /> */}
       {/* Ejemplos de procesos asíncronos */}
       {/* <AsyncExample /> */}
-      <ObservableExample />
+      {/* <ObservableExample /> */}
+      <FetchExample />
       {/* PROYECTO FINAL */}
       {/* <TaskListComponent /> */}
     </div>

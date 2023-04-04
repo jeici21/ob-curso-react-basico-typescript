@@ -31,9 +31,7 @@ const AsyncExample = () => {
     }
 
     async function obtainMessage() {
-        let promise = new Promise((resolve, reject) => {
-            setTimeout(() => resolve('Hello World'), 2000);
-        })
+        let promise = new Promise(resolve => setTimeout(() => resolve('Hello World'), 2000))
         let message = await promise
         alert(`Message received: ${message}`)
     }
