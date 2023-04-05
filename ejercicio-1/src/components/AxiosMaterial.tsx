@@ -13,8 +13,7 @@ const AxiosMaterial = () => {
     const [disableMin, setDisableMin] = useState(false);
 
     const obtainChiste = () => {
-        getChiste()
-            .then((response: AxiosResponse) => {
+        getChiste().then((response: AxiosResponse) => {
                 if (response.status === 200) {
                     setChiste(response.data);
                     setDisablePlus(false);
