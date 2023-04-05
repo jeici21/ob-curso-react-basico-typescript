@@ -1,5 +1,6 @@
 import './App.css'
-import FetchExample from './components/pure/FetchExample'
+import AxiosExample from './components/pure/AxiosExample'
+//import FetchExample from './components/pure/FetchExample'
 //import AsyncExample from './components/pure/AsyncExample'
 //import ObservableExample from './components/pure/ObservableExample'
 //import Father from './components/container/father'
@@ -43,7 +44,8 @@ function App() {
       {/* Ejemplos de procesos asíncronos */}
       {/* <AsyncExample /> */}
       {/* <ObservableExample /> */}
-      <FetchExample />
+      {/* <FetchExample /> */}
+      <AxiosExample />
       {/* PROYECTO FINAL */}
       {/* <TaskListComponent /> */}
     </div>
