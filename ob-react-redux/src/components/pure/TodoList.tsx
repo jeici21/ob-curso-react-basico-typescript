@@ -1,7 +1,7 @@
 import Todo from "./Todo"
 
 type TodoListProps = {
-    todos: Required<[Required<{ id: Required<number>, text: Required<string>, completed: Required<boolean> }>]>,
+    todos: Required<{ id: number, text: string, completed: boolean }[]>,
     onTodoClick(id: number): Required<void>
 }
 

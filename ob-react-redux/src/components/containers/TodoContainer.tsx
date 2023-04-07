@@ -1,23 +1,25 @@
-import { ConnectedProps, connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { Dispatch } from 'redux';
-//Actions
-import TodoList from '../pure/TodoList'
+// Actions
 import { toggleTodo } from '../../store/actions/actions'
+import TodoList from '../pure/TodoList';
 
-interface Todo { id: number; text: string; completed: boolean; }
-interface AppState { todosState: Todo[]; filterState: string; }
-type PropsFromRedux = ConnectedProps<typeof connector>;
+type Todos = { id: number, text: string, completed: boolean }
+type State = { todosState: Todos[], filterState: string }
 
-//Filter Todo List
-const filterTodos = (todos: Todo[], filter: string) => {
+// Filter Todo List
+const filterTodos = (todos: Todos[], filter: string) => {
+
     switch (filter) {
-        case 'SHOW_ALL': return todos
-        case 'SHOW_ACTIVE': return todos.filter(todo => !todo.completed)
-        case 'SHOW_COMPLETED': return todos.filter(todo => todo.completed)
+        case 'SHOW_ALL': return todos;
+        case 'SHOW_ACTIVE': return todos.filter((todo) => !todo.completed);
+        case 'SHOW_COMPLETED': return todos.filter((todo) => todo.completed);
         default: return todos;
     }
+
 }
-const mapStateToProps = (state: AppState) => {
+
+const mapStateToProps = (state: State) => {
     return {
         todos: filterTodos(state.todosState, state.filterState)
     }
@@ -25,15 +27,13 @@ const mapStateToProps = (state: AppState) => {
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
     return {
-        onTodoClick: (id: number) => dispatch(toggleTodo(id))
+        onTodoClick: (id: number) => {
+            dispatch(toggleTodo(id))
+        }
     }
 }
 
-//We connect State & Dispatch to TodoList's Props
-const connector = connect(mapStateToProps, mapDispatchToProps);
+// We connect State & Dispach to TodoList's Props 
+const TodosContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList)
 
-const TodosContainer = ({ todos, onTodoClick }: PropsFromRedux) => {
-    return <TodoList todos={todos as [Required<Todo>]} onTodoClick={onTodoClick} />;
-};
-
-export default connector(TodosContainer);
+export default TodosContainer;
