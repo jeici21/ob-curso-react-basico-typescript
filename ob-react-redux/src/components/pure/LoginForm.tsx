@@ -1,7 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from 'yup'
 
-type LoginFormProps = { logged: Required<boolean>, fetching: Required<boolean>, onLogin(email: string, password: string): Required<void> }
+type LoginFormProps = {
+    logged: Required<boolean>, fetching: Required<boolean>, onLogin(email: string, password: string): Required<void>
+}
 
 const loginSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email format').required('Email is required'),

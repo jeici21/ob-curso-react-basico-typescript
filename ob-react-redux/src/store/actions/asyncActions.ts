@@ -9,11 +9,7 @@ export const login = (email: string, password: string) => {
     return {
         type: ApiCalls.API_CALL_REQUEST,
         payload: {
-            request: {
-                method: 'post',
-                url: 'https://reqres.in/api/login',
-                data: { email, password }
-            },
+            request: { method: 'post', url: 'https://reqres.in/api/login', data: { email, password } },
             okAction: ApiCalls.API_CALL_SUCCESS,
             failAction: ApiCalls.API_CALL_FAILURE
         }
@@ -27,11 +23,7 @@ export const httpRequest = (method: string, url: string, data: { email: string, 
     return {
         type: ApiCalls.API_CALL_REQUEST,
         payload: {
-            request: {
-                method,
-                url,
-                data
-            },
+            request: { method, url, data },
             okAction: ApiCalls.API_CALL_SUCCESS,
             failAction: ApiCalls.API_CALL_FAILURE
         }
