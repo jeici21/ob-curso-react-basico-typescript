@@ -4,13 +4,9 @@ type TodoProps = {
 
 const Todo = ({ onClick, completed, text, id }: TodoProps) => {
     return (
-        <li onClick={onClick} style={{
-            textDecoration: completed ? 'line-though' : 'none',
-            textDecorationColor: completed ? 'green' : 'none',
-            color: completed ? 'green' : 'white'
-        }}>
-            {id} - {text}
-        </li>
+        <li onClick={onClick} style={{ textDecoration: completed ? 'line-though' : 'none',
+            textDecorationColor: completed ? 'green' : 'none', color: completed ? 'green' : 'white'
+        }}>{id} - {text}</li>
     )
 }
 
