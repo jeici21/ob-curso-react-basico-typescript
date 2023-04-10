@@ -7,6 +7,7 @@
 import { createContext, useContext, useState } from "react"
 
 interface MiContextoInterface { token: string, sesion: number }
+
 const miContexto = createContext<MiContextoInterface | null>(null)
 /**
  * 
@@ -38,9 +39,7 @@ const Componente2 = () => {
 }
 
 export default function MiComponenteConContexto() {
-    const estadoInicial = {
-        token: '1234557', sesion: 1
-    }
+    const estadoInicial = { token: '1234557', sesion: 1 }
 
     //Creamos el estado de este componente
     const [sessionData, setSessionData] = useState(estadoInicial)
