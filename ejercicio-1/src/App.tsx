@@ -1,6 +1,8 @@
 import './App.css'
-import TodoContainer from './components/containers/TodoContainer'
-import TodoFormContainer from './components/containers/TodoFormContainer'
+import TaskForm from './components/TaskForm'
+import TaskList from './components/TaskList'
+import { TaskProvider } from './components/containers/Context'
+import { Action } from './store/types/types'
 //import Clock from './components/Clock'
 //import ClockHook from './components/ClockHook'
 //import ContactoList from './components/ContactoList'
@@ -10,14 +12,20 @@ import TodoFormContainer from './components/containers/TodoFormContainer'
 function App() {
   return (
     <div className="App">
-      {/* <ContactoList /> */}
-      {/* <Clock /> */}
-      {/* <ClockHook /> */}
-      {/* <Cuadrado /> */}
-      {/* <TareasFormik /> */}
-      {/* <AxiosMaterial /> */}
-      <TodoContainer />
-      <TodoFormContainer />
+      <TaskProvider state={{ tasks: [], filteredTasks: [] }} dispatch={function (value: Action): void {
+        throw new Error('Function not implemented.')
+      }}>
+        {/* <ContactoList /> */}
+        {/* <Clock /> */}
+        {/* <ClockHook /> */}
+        {/* <Cuadrado /> */}
+        {/* <TareasFormik /> */}
+        {/* <AxiosMaterial /> */}
+        {/* <TodoContainer /> */}
+        {/* <TodoFormContainer /> */}
+        <TaskForm />
+        <TaskList />
+      </TaskProvider>
     </div>
   )
 }
