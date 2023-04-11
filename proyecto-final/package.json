@@ -4,13 +4,13 @@
   "description": "Proyecto final curso React JS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Comando no especificado\" && exit 1",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
     "dev": "webpack-dev-server --node development --hot --open --content-base",
     "docs:build": "documentation build src/** -f html -o docs",
-    "build": "",
-    "build:prod": "webpack"
+    "build": "webpack --node development",
+    "build:prod": "webpack --node production"
   },
   "keywords": [
     "react"
