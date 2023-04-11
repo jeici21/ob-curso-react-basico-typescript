@@ -27,18 +27,18 @@ module.exports = {
     module: {
         rules: [
             // Reglas para archivos de JS y JSX
-            // Tienen que pasar el LINTING para poder pasar
+            // Tienen que pasar el LINTING para para poder pasar
             {
                 enforce: 'pre',
                 test: /(\.js|\.jsx)$/,
                 exclude: /node_modules/,
                 use: [
-                    'eslint-loader',
-                    'source-map-loader',
+                  'eslint-loader',
+                  'source-map-loader',
                 ],
             },
             // Reglas para archivos JS y JSX
-            // Reglas de Babel JS y JSX
+            // Reglas de Babel ES y JSX
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
@@ -48,7 +48,7 @@ module.exports = {
                         presets: [
                             '@babel/env',
                             '@babel/react',
-                        ],
+                          ],
                     },
                 },
             },
@@ -65,37 +65,37 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif)$/i,
                 use: [
-                    {
-                        loader: 'file-loader',
-                    },
+                  {
+                    loader: 'file-loader',
+                  },
                 ],
             },
         ],
     },
     plugins: [
         new HtmlWebpackPlugin(
-            {
-                template: './public/index.html',
-            },
+          {
+            template: './public/index.html',
+          },
         ),
         new MiniCssExtractPlugin(
-            {
-                filename: './css/styles.css',
-            },
+          {
+            filename: './css/styles.css',
+          },
         ),
         new SourceMapDevToolPlugin(
-            {
-                filename: '[file].map',
-            },
+          {
+            filename: '[file].map',
+          },
         ),
-    ],
-    resolve: {
+      ],
+      resolve: {
         extensions: ['.js', '.jsx', '.css', '.scss'],
         modules: [
-            'node_modules',
+          'node_modules',
         ],
         alias: {
-            'react-redux': path.join(__dirname, '/node_modules/react-redux/dist/react-redux.min'),
+          'react-redux': path.join(__dirname, '/node_modules/react-redux/dist/react-redux.min'),
         },
-    },
+      },
 };
